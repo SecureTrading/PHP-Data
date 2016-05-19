@@ -20,4 +20,5 @@ interface DataInterface extends \ArrayAccess, \Countable, \Iterator {
   function clear();
   function replace(array $array);
   function toArray();
+  function fromArray(array $data, $type = '\Securetrading\Data\Data');
 }
