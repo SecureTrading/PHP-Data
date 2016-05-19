@@ -431,7 +431,50 @@ class DataTest extends \Securetrading\Unittest\UnittestAbstract {
     $actualReturnValue = $dataOne->toArray();
     $this->assertEquals($expectedReturnValue, $actualReturnValue);
   }
-  
+
+  /**
+   *
+   */
+  public function testFromArray() {
+    $data = new \Securetrading\Data\Data();
+    $returnValue = $data->fromArray(array(
+      'key1' => 'value1',
+      'key2' => array(
+        'key3' => 'value3',
+	'key4' => array(
+          'key5' => 'value5',
+	),
+      ),
+    ));
+    
+    $this->assertSame($data, $returnValue);
+    $this->assertInstanceOf('\Securetrading\Data\Data', $data->get('key2'));
+    $this->assertInstanceOf('\Securetrading\Data\Data', $data->get('key2')->get('key4'));
+
+    $this->assertEquals('value1', $data->get('key1'));
+    $this->assertEquals('value3', $data->get('key2')->get('key3'));
+    $this->assertEquals('value5', $data->get('key2')->get('key4')->get('key5'));
+
+    $data = new \Securetrading\Data\Data();
+    $returnValue = $data->fromArray(array(
+      'key1' => 'value1',
+      'key2' => array(
+        'key3' => 'value3',
+	'key4' => array(
+          'key5' => 'value5',
+	),
+      ),
+    ), '\Securetrading\Data\Tests\Unit\ExtendedDataWithSetter');
+
+    $this->assertSame($data, $returnValue);
+    $this->assertInstanceOf('\Securetrading\Data\Tests\Unit\ExtendedDataWithSetter', $data->get('key2'));
+    $this->assertInstanceOf('\Securetrading\Data\Tests\Unit\ExtendedDataWithSetter', $data->get('key2')->get('key4'));
+
+    $this->assertEquals('value1', $data->get('key1'));
+    $this->assertEquals('value3', $data->get('key2')->get('key3'));
+    $this->assertEquals('value5', $data->get('key2')->get('key4')->get('key5'));
+  }
+
   /**
    * 
    */

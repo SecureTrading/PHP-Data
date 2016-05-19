@@ -179,6 +179,19 @@ class Data implements DataInterface {
     }
     return $array;
   }
+
+  public function fromArray(array $data, $type = '\Securetrading\Data\Data') {
+    $recursiveFunction = function($data, $object) use (&$recursiveFunction, $type) {
+      foreach($data as $key => $value) {
+        $value = is_array($value) ? call_user_func($recursiveFunction, $value, new $type) : $value;
+        $object->setSingle($key, $value);
+      }
+      return $object;
+    };
+
+    $recursiveFunction($data, $this);
+    return $this;
+  }
   
   // ArrayAccess
   
