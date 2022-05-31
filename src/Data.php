@@ -204,11 +204,11 @@ class Data implements DataInterface {
   }
   
   public function offsetSet($offset, $value) : void {
-    return $this->setSingle($offset, $value);
+    $this->setSingle($offset, $value);
   }
   
   public function offsetUnset($offset) : void {
-    return $this->unsSingle($offset);
+    $this->unsSingle($offset);
   }
   
   // Countable:
