@@ -195,50 +195,50 @@ class Data implements DataInterface {
   
   // ArrayAccess
   
-  public function offsetExists($offset) {
+  public function offsetExists($offset) : bool {
     return $this->hasSingle($offset);
   }
   
-  public function offsetGet($offset) {
+  public function offsetGet($offset) : mixed {
     return $this->getSingle($offset);
   }
   
-  public function offsetSet($offset, $value) {
+  public function offsetSet($offset, $value) : void {
     return $this->setSingle($offset, $value);
   }
   
-  public function offsetUnset($offset) {
+  public function offsetUnset($offset) : void {
     return $this->unsSingle($offset);
   }
   
   // Countable:
   
-  public function count() {
+  public function count() : int {
     return count($this->_data);
   }
   
   // Iterable:
   
-  public function current() {
+  public function current() : mixed {
     return current($this->_copy);
   }
   
-  public function key() {
+  public function key() : mixed {
     return key($this->_copy);
   }
   
-  public function next() {
+  public function next() : void {
     $this->_position++;
     next($this->_copy);
   }
     
-  public function rewind() {
+  public function rewind() : void {
     $this->_copy = $this->_data;
     $this->_position = 0;
     reset($this->_copy);
   }
   
-  public function valid() {
+  public function valid() : bool {
     return $this->_position < count($this->_copy);
   }
 }
