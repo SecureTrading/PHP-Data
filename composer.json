@@ -1,6 +1,5 @@
 {
   "name" : "securetrading/data",
-  "version" : "3.0.1",
   "description" : "Secure Trading's Data package.  Contains getters/setters/deleters for a data object and allows extending classes to define validation methods for specific data keys.",
   "license" : "MIT",
   "require" : {
