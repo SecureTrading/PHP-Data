@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43de8225d1d2e879d709655a5d6d0a11",
+    "content-hash": "282f64683403ed643f032bc65057563c",
     "packages": [],
     "packages-dev": [
         {
@@ -1756,21 +1756,21 @@
         },
         {
             "name": "securetrading/unittest",
-            "version": "4.0.0",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SecureTrading/PHP-Unittest.git",
-                "reference": "235ef50f8e6b6b4eaa71ab83b561e78908357c8c"
+                "reference": "df2a28095a13caab08a7c257a7ea3933dece374c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SecureTrading/PHP-Unittest/zipball/235ef50f8e6b6b4eaa71ab83b561e78908357c8c",
-                "reference": "235ef50f8e6b6b4eaa71ab83b561e78908357c8c",
+                "url": "https://api.github.com/repos/SecureTrading/PHP-Unittest/zipball/df2a28095a13caab08a7c257a7ea3933dece374c",
+                "reference": "df2a28095a13caab08a7c257a7ea3933dece374c",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
-                "phpunit/phpunit": "^9.2"
+                "php": "^8.2",
+                "phpunit/phpunit": "^9.6"
             },
             "type": "library",
             "autoload": {
@@ -1785,9 +1785,9 @@
             "description": "Secure Trading's unittest package providing helper methods/classes for writing testing with PHPUnit.",
             "support": {
                 "issues": "https://github.com/SecureTrading/PHP-Unittest/issues",
-                "source": "https://github.com/SecureTrading/PHP-Unittest/tree/4.0.0"
+                "source": "https://github.com/SecureTrading/PHP-Unittest/tree/4.0.4"
             },
-            "time": "2023-10-31T14:14:25+00:00"
+            "time": "2026-02-12T12:47:20+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -1842,12 +1842,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1.0"
+        "php": "^8.2.0"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
